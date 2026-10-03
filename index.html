@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <div>
+        <h1>Pokédex</h1>
+        <p class="subtitle">Powered by PokéAPI</p>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <label for="search" class="visually-hidden">Search Pokémon by name</label>
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+      </svg>
+      <input id="search" type="search" placeholder="Search Pokémon…  (press / )" autocomplete="off" spellcheck="false">
+      <span id="count" class="count" aria-live="polite"></span>
+    </div>
+  </header>
+
+  <main>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <section id="grid" class="grid" aria-label="Pokémon list"></section>
+
+    <nav class="pager" aria-label="Pagination">
+      <button id="prev" class="pager-btn" type="button">&larr; Previous</button>
+      <span id="page-info" class="page-info"></span>
+      <button id="next" class="pager-btn" type="button">Next &rarr;</button>
+    </nav>
+  </main>
+
+  <dialog id="dialog" class="dialog">
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
